@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitcoin para Iniciantes | Click Útil</title>
+  <meta name="description" content="Aprenda os primeiros passos para entender e começar a investir em Bitcoin com mais clareza e segurança." />
+  <style>
+    :root{
+      --primary:#6A0DAD;
+      --primary-dark:#4d0a7d;
+      --mint:#98FF98;
+      --bg:#f7f7fb;
+      --text:#1f2937;
+      --muted:#667085;
+      --card:#ffffff;
+      --line:#e9e7f2;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(106,13,173,.12), transparent 30%),
+        linear-gradient(180deg, #fcfbff 0%, #f6f4fb 100%);
+      color:var(--text);
+    }
+
+    .container{
+      width:min(1120px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(106,13,173,.10);
+      color:var(--primary);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+
+    .hero{
+      padding:36px 0 60px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:34px;
+      background:rgba(255,255,255,.75);
+      backdrop-filter: blur(12px);
+      border:1px solid rgba(106,13,173,.10);
+      border-radius:20px;
+      padding:16px 18px;
+      box-shadow:0 10px 30px rgba(74, 58, 100, .08);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      color:var(--primary);
+      font-size:22px;
+    }
+
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--primary), #8f42d8);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .cta-top{
+      display:inline-block;
+      text-decoration:none;
+      color:#fff;
+      background:linear-gradient(135deg, var(--primary), #8f42d8);
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      box-shadow:0 12px 24px rgba(106,13,173,.25);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .95fr;
+      align-items:center;
+      gap:40px;
+    }
+
+    h1{
+      margin:16px 0 16px;
+      font-size:clamp(36px, 5vw, 60px);
+      line-height:1.02;
+      letter-spacing:-1.4px;
+      color:#23183b;
+    }
+
+    .subtitle{
+      font-size:19px;
+      line-height:1.7;
+      color:var(--muted);
+      margin:0 0 24px;
+      max-width:640px;
+    }
+
+    .hero-points{
+      display:grid;
+      gap:12px;
+      margin:0 0 28px;
+      padding:0;
+      list-style:none;
+    }
+
+    .hero-points li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      color:#3f4552;
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(106,13,173,.08);
+      padding:12px 14px;
+      border-radius:14px;
+    }
+
+    .dot{
+      width:22px;
+      height:22px;
+      min-width:22px;
+      border-radius:50%;
+      background:rgba(152,255,152,.5);
+      display:grid;
+      place-items:center;
+      font-size:13px;
+      margin-top:1px;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:14px;
+      margin-bottom:14px;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:700;
+      border-radius:14px;
+      padding:16px 24px;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--primary), #8f42d8);
+      color:#fff;
+      box-shadow:0 16px 30px rgba(106,13,173,.23);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--primary);
+      border:1px solid rgba(106,13,173,.18);
+    }
+
+    .small-note{
+      color:#7a7f8f;
+      font-size:14px;
+      line-height:1.6;
+      margin-top:8px;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+      border:1px solid rgba(106,13,173,.10);
+      border-radius:28px;
+      padding:20px;
+      box-shadow:0 24px 70px rgba(80,65,114,.16);
+    }
+
+    .hero-card img{
+      width:100%;
+      display:block;
+      border-radius:20px;
+    }
+
+    .hero-card-meta{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      margin-top:16px;
+      flex-wrap:wrap;
+    }
+
+    .meta-box{
+      flex:1 1 140px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .meta-label{
+      display:block;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+      color:#8a8fa3;
+      margin-bottom:6px;
+    }
+
+    .meta-value{
+      font-size:16px;
+      font-weight:700;
+      color:#2e2350;
+    }
+
+    section{
+      padding:26px 0;
+    }
+
+    .section-title{
+      font-size:34px;
+      line-height:1.1;
+      margin:0 0 14px;
+      letter-spacing:-.8px;
+      color:#24193c;
+    }
+
+    .section-desc{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:17px;
+      max-width:760px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:24px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 10px 30px rgba(62, 50, 94, .05);
+    }
+
+    .card h3{
+      margin:0 0 12px;
+      font-size:20px;
+      color:#281d44;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:22px;
+      margin-top:26px;
+    }
+
+    .checklist{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .checklist h3{
+      margin:0 0 16px;
+      font-size:24px;
+      color:#281d44;
+    }
+
+    .checklist ul{
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+      line-height:1.9;
+    }
+
+    .offer{
+      background:linear-gradient(135deg, #2a1743 0%, #4d0a7d 45%, #6A0DAD 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:34px;
+      box-shadow:0 24px 60px rgba(60, 17, 101, .26);
+      margin-top:32px;
+    }
+
+    .offer h2{
+      margin:0 0 12px;
+      font-size:34px;
+      line-height:1.1;
+      letter-spacing:-.8px;
+    }
+
+    .offer p{
+      margin:0 0 20px;
+      line-height:1.8;
+      color:rgba(255,255,255,.86);
+      font-size:17px;
+      max-width:760px;
+    }
+
+    .offer-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px 20px;
+      margin:20px 0 28px;
+      padding:0;
+      list-style:none;
+    }
+
+    .offer-list li{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:14px 16px;
+      line-height:1.6;
+    }
+
+    .btn-light{
+      background:#fff;
+      color:var(--primary);
+      box-shadow:0 12px 26px rgba(0,0,0,.18);
+    }
+
+    .policy{
+      margin-top:34px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:30px;
+    }
+
+    .policy-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      margin-top:20px;
+    }
+
+    .policy-box{
+      background:#faf9fd;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+    }
+
+    .policy-box h3{
+      margin:0 0 12px;
+      font-size:22px;
+      color:#281d44;
+    }
+
+    .policy-box h4{
+      margin:18px 0 8px;
+      font-size:17px;
+      color:var(--primary);
+    }
+
+    .policy-box p, .policy-box li{
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .faq{
+      margin-top:16px;
+      display:grid;
+      gap:14px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      color:#2b2147;
+    }
+
+    details p{
+      margin:12px 0 0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    footer{
+      padding:34px 0 60px;
+      text-align:center;
+      color:#7d8191;
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    footer a{
+      color:var(--primary);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    @media (max-width: 920px){
+      .hero-grid,
+      .split,
+      .policy-grid,
+      .cards,
+      .offer-list{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero{padding-top:18px}
+      .nav{padding:14px}
+      .brand{font-size:19px}
+      .brand-mark{width:36px;height:36px}
+      .container{width:min(100% - 20px, 1120px)}
+      .hero-card, .card, .checklist, .policy, .offer, .policy-box{padding:20px}
+      .cta-row{flex-direction:column; align-items:stretch}
+      .btn, .cta-top{width:100%; text-align:center}
+      h1{font-size:38px}
+      .section-title{font-size:28px}
+      .offer h2{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container hero">
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <span>Click Útil</span>
+      </div>
+      <a class="cta-top" href="https://pay.kiwify.com.br/6D8zUNR" target="_blank" rel="noopener noreferrer">Comprar agora</a>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <span class="badge">E-book digital • Acesso imediato</span>
+        <h1>Bitcoin para Iniciantes</h1>
+        <p class="subtitle">
+          Entenda os fundamentos do Bitcoin, aprenda os primeiros passos para começar com mais clareza e tenha um guia prático para evitar a sensação de estar perdido logo no início.
+        </p>
+
+        <ul class="hero-points">
+          <li><span class="dot">✓</span><span>Linguagem simples para quem está começando agora e quer entender o básico sem complicação.</span></li>
+          <li><span class="dot">✓</span><span>Conteúdo objetivo, ideal para dar os primeiros passos antes de avançar para temas mais técnicos.</span></li>
+          <li><span class="dot">✓</span><span>Formato digital com acesso rápido para você estudar no seu ritmo, no celular, tablet ou computador.</span></li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://pay.kiwify.com.br/6D8zUNR" target="_blank" rel="noopener noreferrer">Quero acessar o e-book</a>
+          <a class="btn btn-secondary" href="#conteudo">Ver conteúdo</a>
+        </div>
+
+        <p class="small-note">
+          Produto digital. O botão acima leva para o checkout seguro da Kiwify.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <img src="mockup.png" alt="Mockup do ebook Bitcoin para Iniciantes da Click Útil" />
+        <div class="hero-card-meta">
+          <div class="meta-box">
+            <span class="meta-label">Formato</span>
+            <span class="meta-value">E-book digital</span>
+          </div>
+          <div class="meta-box">
+            <span class="meta-label">Acesso</span>
+            <span class="meta-value">Online e imediato</span>
+          </div>
+          <div class="meta-box">
+            <span class="meta-label">Indicado para</span>
+            <span class="meta-value">Iniciantes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="conteudo">
+    <div class="container">
+      <span class="badge">Por que este material?</span>
+      <h2 class="section-title">Um começo mais claro para quem quer entender Bitcoin</h2>
+      <p class="section-desc">
+        Muita gente trava logo no início porque encontra informação demais, termos técnicos demais e pouca didática. Este e-book foi pensado para reduzir essa barreira e entregar uma visão mais organizada dos primeiros conceitos.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Base para começar</h3>
+          <p>Ajuda você a sair do zero e construir uma noção inicial mais segura sobre o que é Bitcoin e por que tanta gente fala sobre ele.</p>
+        </div>
+        <div class="card">
+          <h3>Leitura objetiva</h3>
+          <p>Estrutura pensada para facilitar o entendimento, sem excesso de complexidade e com foco em quem está começando.</p>
+        </div>
+        <div class="card">
+          <h3>Estudo no seu ritmo</h3>
+          <p>Acesse quando quiser e revise quantas vezes precisar, no dispositivo que for mais confortável para você.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="checklist">
+          <h3>O que você vai encontrar</h3>
+          <ul>
+            <li>Introdução ao universo do Bitcoin.</li>
+            <li>Visão inicial para quem ainda está começando.</li>
+            <li>Explicações mais acessíveis para reduzir a sensação de confusão.</li>
+            <li>Material pensado para leitura prática e progressiva.</li>
+            <li>Conteúdo digital para consulta rápida quando precisar.</li>
+          </ul>
+        </div>
+
+        <div class="checklist">
+          <h3>Para quem este e-book é ideal</h3>
+          <ul>
+            <li>Quem ouviu falar de Bitcoin, mas ainda não entende bem como funciona.</li>
+            <li>Quem quer um material mais introdutório e organizado.</li>
+            <li>Quem prefere estudar em casa, com calma e no próprio tempo.</li>
+            <li>Quem deseja dar os primeiros passos com mais confiança.</li>
+            <li>Quem quer começar pelo básico antes de buscar conteúdos avançados.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="offer">
+        <h2>Dê o primeiro passo com mais clareza</h2>
+        <p>
+          Se a sua intenção é começar a entender Bitcoin sem ficar pulando entre dezenas de conteúdos soltos, este material pode ser o ponto de partida ideal para organizar sua base.
+        </p>
+
+        <ul class="offer-list">
+          <li>✔ Produto digital com acesso rápido</li>
+          <li>✔ Leitura prática para iniciantes</li>
+          <li>✔ Visual profissional da Click Útil</li>
+          <li>✔ Checkout seguro pela Kiwify</li>
+        </ul>
+
+        <a class="btn btn-light" href="https://pay.kiwify.com.br/6D8zUNR" target="_blank" rel="noopener noreferrer">Comprar com checkout seguro</a>
+      </div>
+
+      <div class="policy">
+        <span class="badge">Política oficial</span>
+        <h2 class="section-title">Trocas, devoluções e versão em inglês</h2>
+        <p class="section-desc">
+          Abaixo está uma versão resumida da política em Português e English, útil para dar mais transparência à página e atender melhor às exigências de plataformas como Facebook.
+        </p>
+
+        <div class="policy-grid">
+          <div class="policy-box">
+            <h3>🇧🇷 Política de Trocas e Devoluções</h3>
+            <p>
+              Na Click Útil, buscamos oferecer conteúdos digitais úteis e de qualidade. Como comercializamos infoprodutos digitais, nossa política segue o direito de arrependimento previsto no Código de Defesa do Consumidor.
+            </p>
+
+            <h4>Direito de arrependimento</h4>
+            <p>
+              O cliente pode solicitar o cancelamento em até <strong>7 dias corridos</strong> após a confirmação da compra, conforme o Artigo 49 do Código de Defesa do Consumidor.
+            </p>
+
+            <h4>Como solicitar</h4>
+            <p>
+              Para solicitar o reembolso, entre em contato pelo botão abaixo:
+            </p>
+            <p>
+              <a class="btn btn-primary" href="mailto:clickutilatendimento@gmail.com?subject=Solicita%C3%A7%C3%A3o%20de%20Reembolso%20-%20Bitcoin%20para%20Iniciantes">Solicitar reembolso</a>
+            </p>
+
+            <h4>Reembolso</h4>
+            <p>
+              Após a análise da solicitação, o reembolso será processado pelo mesmo meio de pagamento utilizado na compra, conforme os prazos da operadora ou instituição financeira.
+            </p>
+          </div>
+
+          <div class="policy-box">
+            <h3>🇺🇸 Exchange and Refund Policy</h3>
+            <p>
+              At Click Útil, we aim to provide useful and high-quality digital content. As we sell digital products, our refund policy follows the withdrawal right established by Brazilian consumer law for online purchases.
+            </p>
+
+            <h4>Right of withdrawal</h4>
+            <p>
+              Customers may request a cancellation within <strong>7 calendar days</strong> after purchase confirmation, according to Article 49 of the Brazilian Consumer Protection Code.
+            </p>
+
+            <h4>How to request</h4>
+            <p>
+              To request a refund, please contact us using the button below:
+            </p>
+            <p>
+              <a class="btn btn-primary" href="mailto:clickutilatendimento@gmail.com?subject=Refund%20Request%20-%20Bitcoin%20for%20Beginners">Request refund</a>
+            </p>
+
+            <h4>Refund process</h4>
+            <p>
+              After review, the refund will be processed using the same payment method used for the purchase, subject to the payment provider's processing time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <span class="badge">Perguntas frequentes</span>
+        <h2 class="section-title">FAQ rápido</h2>
+        <div class="faq">
+          <details>
+            <summary>Como recebo o produto após a compra?</summary>
+            <p>O acesso é liberado conforme o fluxo da plataforma de pagamento e entrega configurado no seu produto digital.</p>
+          </details>
+          <details>
+            <summary>Preciso ter conhecimento prévio?</summary>
+            <p>Não. A proposta deste material é justamente ajudar quem está começando e quer uma base inicial mais organizada.</p>
+          </details>
+          <details>
+            <summary>O pagamento é seguro?</summary>
+            <p>Sim. O botão de compra desta página direciona para o checkout da Kiwify.</p>
+          </details>
+          <details>
+            <summary>Posso pedir reembolso?</summary>
+            <p>Sim. A página já apresenta uma política resumida em Português e Inglês, com direito de arrependimento em até 7 dias corridos.</p>
+          </details>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <footer>
+    ⚡ Pequenas ideias que mudam resultados<br />
+    <strong style="color:#6A0DAD;">Click Útil</strong><br />
+    Contato: <a href="mailto:clickutilatendimento@gmail.com">clickutilatendimento@gmail.com</a><br />
+    © 2026 Click Útil — Todos os direitos reservados
+  </footer>
+</body>
+</html>
