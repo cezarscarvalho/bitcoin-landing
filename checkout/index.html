@@ -1,1 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra | Bitcoin para Iniciantes | Click Útil</title>
+  <meta name="description" content="Finalize sua compra com segurança e acesso imediato ao ebook Bitcoin para Iniciantes da Click Útil.">
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];
+  t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1955174545133181');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1955174545133181&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <!-- TikTok Pixel Code -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;
+    var ttq=w[t]=w[t]||[];
+    ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+    for(var i=0;i<ttq.methods.length;i++){ttq.setAndDefer(ttq,ttq.methods[i])}
+    ttq.load=function(e,n){
+      var r="https://analytics.tiktok.com/i18n/pixel/events.js";
+      ttq._i=ttq._i||{};
+      ttq._i[e]=[];
+      ttq._i[e]._u=r;
+      ttq._t=ttq._t||{};
+      ttq._t[e]=+new Date;
+      ttq._o=ttq._o||{};
+      ttq._o[e]=n||{};
+      var o=document.createElement("script");
+      o.type="text/javascript";
+      o.async=!0;
+      o.src=r+"?sdkid="+e+"&lib="+t;
+      var a=document.getElementsByTagName("script")[0];
+      a.parentNode.insertBefore(o,a);
+    };
+
+    ttq.load('D74KB43C77UCBSL4PQI0');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+
+  <style>
+    :root{
+      --primary:#6A0DAD;
+      --primary-dark:#4d0a7d;
+      --mint:#98FF98;
+      --bg:#f5f6fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#667085;
+      --line:#e8e5f2;
+      --success:#16a34a;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(180deg,#fbfbfe 0%, #f4f2fa 100%);
+      color:var(--text);
+    }
+
+    .wrap{
+      width:min(1120px, calc(100% - 24px));
+      margin:0 auto;
+      padding:28px 0 60px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:26px;
+      padding:16px 18px;
+      background:rgba(255,255,255,.8);
+      border:1px solid rgba(106,13,173,.10);
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(80,65,114,.08);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--primary);
+      font-weight:700;
+      font-size:22px;
+    }
+
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--primary), #8f42d8);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .safe{
+      font-size:13px;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .progress{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-bottom:24px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .step.active{
+      border-color:rgba(106,13,173,.25);
+      color:var(--primary);
+      background:#faf7ff;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .panel{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 16px 40px rgba(62,50,94,.06);
+    }
+
+    .title{
+      margin:0 0 8px;
+      font-size:34px;
+      line-height:1.1;
+      color:#23183b;
+      letter-spacing:-.8px;
+    }
+
+    .subtitle{
+      margin:0 0 24px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:16px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:14px;
+    }
+
+    .field{
+      margin-bottom:14px;
+    }
+
+    .field label{
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      color:#3b315a;
+      margin-bottom:8px;
+    }
+
+    .input, .select{
+      width:100%;
+      border:1px solid #ddd8eb;
+      border-radius:14px;
+      padding:14px 14px;
+      font-size:15px;
+      outline:none;
+      background:#fff;
+    }
+
+    .input:focus, .select:focus{
+      border-color:rgba(106,13,173,.45);
+      box-shadow:0 0 0 4px rgba(106,13,173,.08);
+    }
+
+    .payment-box{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      margin-top:18px;
+      background:#fcfbff;
+    }
+
+    .payment-title{
+      margin:0 0 12px;
+      font-size:18px;
+      color:#2e2350;
+    }
+
+    .payment-note{
+      margin:10px 0 0;
+      font-size:13px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .buy-btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      margin-top:22px;
+      padding:17px 22px;
+      border-radius:16px;
+      text-decoration:none;
+      font-weight:700;
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),#8f42d8);
+      box-shadow:0 18px 32px rgba(106,13,173,.22);
+      font-size:16px;
+    }
+
+    .buy-btn:hover{
+      opacity:.98;
+    }
+
+    .security{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:#f7faf8;
+      border:1px solid #d7eee0;
+      color:#235c37;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .summary-card{
+      position:sticky;
+      top:20px;
+    }
+
+    .product-top{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      margin-bottom:18px;
+    }
+
+    .product-top img{
+      width:110px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(106,13,173,.08);
+      color:var(--primary);
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .product-name{
+      margin:0 0 8px;
+      font-size:24px;
+      line-height:1.1;
+      color:#23183b;
+    }
+
+    .product-desc{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin:18px 0;
+    }
+
+    .row{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      margin:10px 0;
+      color:#4a4f5c;
+      font-size:15px;
+    }
+
+    .row.total{
+      font-size:19px;
+      font-weight:700;
+      color:#23183b;
+      margin-top:14px;
+    }
+
+    .benefits{
+      margin:18px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:15px;
+    }
+
+    .mini-proof{
+      margin-top:18px;
+      padding:16px;
+      border-radius:16px;
+      background:#faf7ff;
+      border:1px solid var(--line);
+    }
+
+    .mini-proof strong{
+      display:block;
+      margin-bottom:8px;
+      color:#2e2350;
+    }
+
+    .footer-note{
+      margin-top:18px;
+      font-size:13px;
+      color:#7b8090;
+      line-height:1.7;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-top:16px;
+      color:var(--primary);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    @media (max-width: 920px){
+      .layout{
+        grid-template-columns:1fr;
+      }
+      .summary-card{
+        position:static;
+      }
+    }
+
+    @media (max-width: 640px){
+      .grid-2{
+        grid-template-columns:1fr;
+      }
+      .title{
+        font-size:28px;
+      }
+      .product-top{
+        flex-direction:column;
+      }
+      .product-top img{
+        width:100%;
+        max-width:220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <span>Click Útil</span>
+      </div>
+      <div class="safe">Ambiente seguro • Redirecionamento para Kiwify</div>
+    </div>
+
+    <div class="progress">
+      <div class="step">1. Produto</div>
+      <div class="step active">2. Finalização</div>
+      <div class="step">3. Pagamento seguro</div>
+    </div>
+
+    <div class="layout">
+      <div class="panel">
+        <h1 class="title">Finalizar compra</h1>
+        <p class="subtitle">
+          Revise os dados abaixo e prossiga para o pagamento seguro do seu produto digital.
+        </p>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input class="input" id="nome" type="text" placeholder="Seu nome completo">
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input class="input" id="email" type="email" placeholder="voce@email.com">
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input class="input" id="telefone" type="text" placeholder="(11) 99999-9999">
+          </div>
+          <div class="field">
+            <label for="pais">País</label>
+            <select class="select" id="pais">
+              <option>Brasil</option>
+              <option>Portugal</option>
+              <option>Estados Unidos</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="payment-box">
+          <h2 class="payment-title">Método de pagamento</h2>
+
+          <div class="field">
+            <label for="cartao">Número do cartão</label>
+            <input class="input" id="cartao" type="text" placeholder="•••• •••• •••• ••••">
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="validade">Validade</label>
+              <input class="input" id="validade" type="text" placeholder="MM/AA">
+            </div>
+            <div class="field">
+              <label for="cvv">CVV</label>
+              <input class="input" id="cvv" type="text" placeholder="•••">
+            </div>
+          </div>
+
+          <p class="payment-note">
+            Ao clicar no botão abaixo, você será redirecionado para o checkout seguro da Kiwify para concluir sua compra.
+          </p>
+        </div>
+
+        <a class="buy-btn"
+           href="https://pay.kiwify.com.br/6D8zUNR"
+           target="_blank"
+           rel="noopener noreferrer"
+           onclick="fbq('track', 'InitiateCheckout'); ttq.track('InitiateCheckout');">
+           Ir para pagamento seguro
+        </a>
+
+        <div class="security">
+          <div>🔒</div>
+          <div>
+            Seus dados são processados em ambiente seguro. O pagamento é finalizado na plataforma da Kiwify.
+          </div>
+        </div>
+
+        <a class="back-link" href="/">← Voltar para a página do produto</a>
+      </div>
+
+      <div class="panel summary-card">
+        <span class="badge">Resumo do pedido</span>
+
+        <div class="product-top">
+          <img src="/mockup.png" alt="Mockup do ebook Bitcoin para Iniciantes">
+          <div>
+            <h2 class="product-name">Bitcoin para Iniciantes</h2>
+            <p class="product-desc">
+              Ebook digital da Click Útil para quem deseja entender os primeiros conceitos do Bitcoin com mais clareza e praticidade.
+            </p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row">
+          <span>Produto digital</span>
+          <span>Acesso imediato</span>
+        </div>
+
+        <div class="row">
+          <span>Entrega</span>
+          <span>Online</span>
+        </div>
+
+        <div class="row">
+          <span>Suporte</span>
+          <span>E-mail</span>
+        </div>
+
+        <div class="row total">
+          <span>Pagamento</span>
+          <span>Via Kiwify</span>
+        </div>
+
+        <ul class="benefits">
+          <li>Acesso rápido ao conteúdo digital.</li>
+          <li>Leitura prática para iniciantes.</li>
+          <li>Produto da Click Útil com visual profissional.</li>
+          <li>Compra redirecionada para checkout seguro.</li>
+        </ul>
+
+        <div class="mini-proof">
+          <strong>Política de reembolso</strong>
+          Solicitações podem ser feitas em até 7 dias corridos após a compra, conforme a política apresentada na página principal.
+        </div>
+
+        <p class="footer-note">
+          Ao prosseguir, você confirma que está adquirindo um produto digital e será redirecionado para a plataforma de pagamento responsável pela finalização da compra.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
