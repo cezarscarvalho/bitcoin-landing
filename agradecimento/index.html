@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagamento Aprovado | Click Útil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#6A0DAD;
+      --primary-dark:#4d0a80;
+      --mint:#98FF98;
+      --mint-dark:#69df88;
+      --bg:#f6f7fb;
+      --text:#1f2430;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --border:rgba(106,13,173,.10);
+      --shadow:0 20px 60px rgba(106,13,173,.12);
+      --radius:24px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(106,13,173,.08), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(152,255,152,.10), transparent 24%),
+        linear-gradient(180deg, #fcfcff 0%, var(--bg) 100%);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px 18px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:960px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(8px);
+      border:1px solid var(--border);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:-120px;
+      right:-120px;
+      width:260px;
+      height:260px;
+      background:radial-gradient(circle, rgba(106,13,173,.18), transparent 70%);
+      pointer-events:none;
+    }
+
+    .card::after{
+      content:"";
+      position:absolute;
+      bottom:-120px;
+      left:-120px;
+      width:260px;
+      height:260px;
+      background:radial-gradient(circle, rgba(152,255,152,.20), transparent 70%);
+      pointer-events:none;
+    }
+
+    .content{
+      position:relative;
+      z-index:2;
+      padding:42px 34px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:28px;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand-mark{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--primary), #8a39d1);
+      position:relative;
+      box-shadow:0 8px 20px rgba(106,13,173,.20);
+      flex-shrink:0;
+    }
+
+    .brand-mark::before{
+      content:"";
+      position:absolute;
+      inset:11px;
+      background:#fff;
+      border-radius:50%;
+    }
+
+    .brand-mark::after{
+      content:"➜";
+      position:absolute;
+      right:7px;
+      bottom:7px;
+      color:var(--mint);
+      font-size:1.15rem;
+      font-weight:800;
+      transform:rotate(-18deg);
+    }
+
+    .brand-name{
+      font-size:1.65rem;
+      font-weight:800;
+      color:var(--primary);
+      line-height:1;
+    }
+
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(152,255,152,.20);
+      color:#1f7a38;
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:.95rem;
+      font-weight:700;
+      border:1px solid rgba(105,223,136,.40);
+    }
+
+    .hero{
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .hero h1{
+      font-size:clamp(2rem, 5vw, 3rem);
+      line-height:1.06;
+      color:var(--primary);
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      max-width:720px;
+      margin:0 auto;
+      font-size:1.06rem;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      margin-top:26px;
+    }
+
+    .box{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(0,0,0,.04);
+    }
+
+    .box h2{
+      color:var(--primary);
+      font-size:1.12rem;
+      margin-bottom:16px;
+      font-weight:700;
+    }
+
+    .steps{
+      list-style:none;
+      display:grid;
+      gap:14px;
+    }
+
+    .steps li{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:var(--text);
+      line-height:1.6;
+      font-size:.98rem;
+    }
+
+    .steps .num{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:rgba(152,255,152,.26);
+      color:#1d6f33;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      flex-shrink:0;
+      margin-top:2px;
+    }
+
+    .highlight{
+      background:linear-gradient(135deg, rgba(106,13,173,.96), rgba(138,57,209,.92));
+      color:#fff;
+      border:none;
+    }
+
+    .highlight h2{
+      color:#fff;
+    }
+
+    .highlight p{
+      color:rgba(255,255,255,.92);
+      line-height:1.72;
+      margin-bottom:18px;
+      font-size:.98rem;
+    }
+
+    .socials{
+      display:grid;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .social{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      text-decoration:none;
+      border-radius:16px;
+      padding:14px 16px;
+      font-weight:600;
+      transition:.2s ease;
+      color:#fff;
+    }
+
+    .social:hover{
+      transform:translateY(-2px);
+    }
+
+    .social span{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .icon{
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.16);
+      font-size:1rem;
+      font-weight:700;
+    }
+
+    .instagram{ background:linear-gradient(135deg, #833AB4, #C13584, #E1306C); }
+    .facebook{ background:#1877F2; }
+    .tiktok{ background:#111111; }
+    .telegram{ background:#2AABEE; }
+
+    .support{
+      margin-top:24px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:22px;
+      text-align:center;
+      box-shadow:0 12px 30px rgba(0,0,0,.04);
+    }
+
+    .support h3{
+      color:var(--primary);
+      font-size:1.05rem;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .support p{
+      color:var(--muted);
+      line-height:1.7;
+      margin-bottom:10px;
+      font-size:.97rem;
+    }
+
+    .support a{
+      color:var(--primary);
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .footer{
+      margin-top:26px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.93rem;
+      line-height:1.8;
+    }
+
+    .footer strong{
+      color:var(--primary);
+    }
+
+    @media (max-width: 860px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .content{
+        padding:30px 20px;
+      }
+
+      .brand-name{
+        font-size:1.4rem;
+      }
+
+      .status{
+        width:100%;
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="content">
+        <div class="topbar">
+          <div class="brand">
+            <div class="brand-name" style="font-size:28px;">
+                 Click <span style="color:#6A0DAD;">Útil</span>
+          </div>
+          </div>
+
+          <div class="status">✔ Pagamento aprovado com sucesso</div>
+        </div>
+
+        <div class="hero">
+          <h1>Obrigado pela sua compra!</h1>
+          <p>
+            Seu pagamento via <strong>PIX</strong> ou <strong>cartão</strong> foi confirmado e seu acesso já está sendo liberado.
+            Agora você está oficialmente mais perto de evoluir no mundo digital com a Click Útil.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="box">
+            <h2>Próximos passos</h2>
+            <ul class="steps">
+              <li><div class="num">1</div><div>Verifique o e-mail usado na compra para acessar seu produto.</div></li>
+              <li><div class="num">2</div><div>Abra o material e comece pelos primeiros tópicos para avançar com clareza.</div></li>
+              <li><div class="num">3</div><div>Salve o conteúdo para consultar quando quiser e revisar depois.</div></li>
+              <li><div class="num">4</div><div>Acompanhe a Click Útil nas redes para receber novidades, conteúdos e futuros lançamentos.</div></li>
+            </ul>
+          </div>
+
+          <div class="box highlight">
+            <h2>Continue com a Click Útil</h2>
+            <p>
+              Estamos criando conteúdos e ferramentas práticas para ajudar você a aprender mais, produzir melhor e transformar conhecimento em resultados reais.
+            </p>
+
+            <div class="socials">
+              <a class="social instagram" href="https://www.instagram.com/useclickutil" target="_blank" rel="noopener noreferrer">
+                <span><span class="icon">◎</span>Instagram</span>
+                <strong>@useclickutil</strong>
+              </a>
+
+              <a class="social facebook" href="https://www.facebook.com/useclickutil" target="_blank" rel="noopener noreferrer">
+                <span><span class="icon">f</span>Facebook</span>
+                <strong>@useclickutil</strong>
+              </a>
+
+              <a class="social tiktok" href="https://www.tiktok.com/@clickutilinfo" target="_blank" rel="noopener noreferrer">
+                <span><span class="icon">♪</span>TikTok</span>
+                <strong>@clickutilinfo</strong>
+              </a>
+
+              <a class="social telegram" href="https://t.me/useclickutil" target="_blank" rel="noopener noreferrer">
+                <span><span class="icon">➤</span>Telegram</span>
+                <strong>@useclickutil</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="support">
+          <h3>Precisa de suporte?</h3>
+          <p>
+            Se tiver qualquer dúvida sobre seu acesso ou compra, fale com a nossa equipe.
+          </p>
+          <a href="mailto:clickutilatendimento@gmail.com">clickutilatendimento@gmail.com</a>
+        </div>
+
+        <div class="footer">
+          <p><strong>Pequenas ideias geram grandes resultados.</strong></p>
+          <p>Obrigado por escolher a Click Útil 🚀</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
